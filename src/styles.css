@@ -1162,6 +1162,16 @@ h1 {
   margin: 0;
 }
 
+.footer-credit a {
+  color: var(--brass-soft);
+  transition: color 220ms var(--ease);
+}
+
+.footer-credit a:hover,
+.footer-credit a:focus-visible {
+  color: var(--cream);
+}
+
 .social-links-footer {
   gap: 8px;
 }
@@ -1437,7 +1447,12 @@ h1 {
     justify-content: flex-end;
   }
 
-  .site-footer p {
+  .footer-rights {
+    grid-column: 1 / 3;
+    justify-self: start;
+  }
+
+  .footer-credit {
     grid-column: 1 / -1;
     justify-self: end;
   }

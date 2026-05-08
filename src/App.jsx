@@ -542,7 +542,13 @@ function Footer({ t }) {
         ))}
       </nav>
       <SocialLinks variant="footer" />
-      <p>{t.footerRights}</p>
+      <p className="footer-rights">{t.footerRights}</p>
+      <p className="footer-credit">
+        Created by{" "}
+        <a href="https://impacttech.gr/" target="_blank" rel="noreferrer">
+          Impact Tech GR
+        </a>
+      </p>
     </footer>
   );
 }
