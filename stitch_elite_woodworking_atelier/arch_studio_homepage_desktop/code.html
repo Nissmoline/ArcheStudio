@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ARCHÉ STUDIO | Bespoke Carpentry &amp; Furniture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed-dim": "#cac6c4",
+                      "muted-border": "rgba(255, 255, 255, 0.1)",
+                      "secondary-fixed-dim": "#f4bb92",
+                      "surface-dim": "#141313",
+                      "surface-variant": "#353434",
+                      "surface-bright": "#3a3939",
+                      "primary-fixed": "#e5e2e1",
+                      "primary": "#c8c6c5",
+                      "on-tertiary-fixed": "#1c1b1a",
+                      "on-secondary-fixed-variant": "#653d1e",
+                      "on-background": "#e5e2e1",
+                      "on-primary-container": "#848282",
+                      "on-error-container": "#ffdad6",
+                      "surface-container-lowest": "#0e0e0e",
+                      "secondary": "#f4bb92",
+                      "surface": "#141313",
+                      "secondary-fixed": "#ffdcc5",
+                      "deep-graphite": "#121212",
+                      "inverse-on-surface": "#313030",
+                      "on-tertiary": "#31302f",
+                      "outline": "#8e9192",
+                      "champagne": "#F3E5D8",
+                      "on-tertiary-fixed-variant": "#484645",
+                      "on-primary-fixed": "#1c1b1b",
+                      "on-secondary": "#4a280a",
+                      "error": "#ffb4ab",
+                      "surface-tint": "#c8c6c5",
+                      "error-container": "#93000a",
+                      "on-primary": "#313030",
+                      "on-secondary-container": "#e1aa82",
+                      "surface-container": "#201f1f",
+                      "primary-container": "#1a1a1a",
+                      "on-surface-variant": "#c4c7c7",
+                      "aged-brass": "#C5A059",
+                      "on-secondary-fixed": "#301400",
+                      "tertiary": "#cac6c4",
+                      "pure-white": "#FFFFFF",
+                      "on-error": "#690005",
+                      "outline-variant": "#444748",
+                      "secondary-container": "#653d1e",
+                      "tertiary-fixed": "#e6e2df",
+                      "on-tertiary-container": "#858281",
+                      "background": "#141313",
+                      "on-surface": "#e5e2e1",
+                      "inverse-primary": "#5f5e5e",
+                      "surface-container-highest": "#353434",
+                      "on-primary-fixed-variant": "#474746",
+                      "ivory-cream": "#FAF9F6",
+                      "warm-oak": "#A67C52",
+                      "surface-container-high": "#2b2a2a",
+                      "surface-container-low": "#1c1b1b",
+                      "inverse-surface": "#e5e2e1",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "tertiary-container": "#1b1a19"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-sm": "8px",
+                      "gutter": "32px",
+                      "stack-md": "24px",
+                      "stack-lg": "48px",
+                      "section-padding": "160px",
+                      "container-max": "1440px"
+              },
+              "fontFamily": {
+                      "label-caps": [
+                              "Manrope"
+                      ],
+                      "body-lg": [
+                              "Manrope"
+                      ],
+                      "body-md": [
+                              "Manrope"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "display-xl": [
+                              "Playfair Display"
+                      ]
+              },
+              "fontSize": {
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.15em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.8",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "300"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-xl": [
+                              "84px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-aged-brass selection:text-deep-graphite">
+<!-- TopAppBar from JSON -->
+<header class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-xl dark:bg-surface/80 border-b border-muted-border">
+<div class="flex justify-between items-center w-full px-gutter py-stack-sm max-w-container-max mx-auto">
+<div class="flex items-center gap-4 cursor-pointer transition-all duration-500 ease-in-out hover:opacity-70">
+<span class="material-symbols-outlined text-on-background dark:text-on-surface" style="font-variation-settings: 'FILL' 0;">menu</span>
+</div>
+<div class="text-center">
+<h1 class="font-headline-md text-headline-md tracking-[0.2em] text-on-background dark:text-on-surface cursor-pointer transition-all duration-500 ease-in-out hover:opacity-70">ARCHÉ STUDIO</h1>
+</div>
+<div class="flex items-center">
+<button class="font-label-caps text-label-caps text-on-background dark:text-on-surface border border-muted-border px-6 py-2 hover:border-aged-brass hover:text-aged-brass transition-all duration-500 ease-in-out">INQUIRE</button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Luxury bespoke kitchen interior" class="w-full h-full object-cover object-center brightness-50 contrast-125 scale-105 transition-transform duration-[10s] hover:scale-100" data-alt="A wide, cinematic shot of an ultra-luxury modern villa kitchen at dusk. The scene is dominated by rich, dark wood cabinetry and a massive, dramatic dark marble island. Soft, warm architectural lighting highlights the textures of the wood grain and brass accents. The overall mood is sophisticated, moody, and deeply atmospheric, aligning with a premium, high-contrast dark mode aesthetic. Large floor-to-ceiling windows suggest an expansive, private residence setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3Nix82NyFlW_Ao08-MO1Tu_mN4DQcSgwctBJCw2t0IJMzbi_F-Fwq69gc9KNF1WENRLURBRAjEX8m0xj_sx3Wo22Gp1OEQ6KH4q1WVUKwRl2Gh8Yu6YG-5WhpP151gNPTcVIpWas0IMaerPRloOCVS5IrclJUDDdbiXdRseTJ0BFqb2Z7bZZUt1PRq8m0tsLCfaRaKQ-NDkyU9QGyvTfz7uHkxDmqmI4h7j3PzuFkGFJRR059b-2irc4aYHQGKuKG8SmXFlBJz2B-"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-gutter w-full flex flex-col items-center text-center pt-32">
+<h2 class="font-display-xl text-display-xl text-pure-white mb-stack-md max-w-4xl mx-auto drop-shadow-2xl">Bespoke Luxury Furniture for Villas, Yachts &amp; Private Residences</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-stack-lg">Architectural minimalism meets unparalleled craftsmanship.</p>
+<button class="bg-deep-graphite text-pure-white border border-muted-border px-8 py-4 font-label-caps text-label-caps hover:border-warm-oak transition-colors duration-700">EXPLORE OUR PORTFOLIO</button>
+</div>
+</section>
+<!-- About Section: Architectural Minimalism -->
+<section class="py-section-padding px-gutter w-full bg-background relative border-b border-muted-border">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 md:col-start-2">
+<span class="font-label-caps text-label-caps text-aged-brass block mb-stack-md">THE STUDIO</span>
+<h3 class="font-headline-lg text-headline-lg text-pure-white mb-stack-md leading-tight">Less but Better.</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg">
+                    Rooted in the principles of architectural minimalism, ARCHÉ STUDIO designs and fabricates interior elements that command attention through quiet precision. We eschew the superfluous, focusing entirely on the purity of material, structural integrity, and the emotional resonance of space.
+                </p>
+<div class="w-16 h-[1px] bg-aged-brass"></div>
+</div>
+<div class="md:col-span-4 md:col-start-8 relative mt-stack-lg md:mt-0">
+<div class="aspect-[3/4] overflow-hidden relative">
+<img alt="Detail of wood craftsmanship" class="w-full h-full object-cover transition-transform duration-[1.5s] hover:scale-105" data-alt="A highly detailed, macro photograph focusing on the precision joinery of a piece of dark, aged oak furniture. The lighting is dramatic and directional, casting deep shadows that emphasize the texture and grain of the wood. A subtle glint of aged brass hardware is visible in the background. The composition is asymmetrical, evocative of high-end editorial design photography, setting a tone of heritage and meticulous craftsmanship within a dark luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbn2zSk5Su2TuA3sSTf0rFgot6P34PJCrCP05QbZ-_jzHhwzCZMZjk9a0Ybk5K-I9wuNUjQSgFIgvdvUhs9v1dbkteZ4wnb-WbvYKZJpR-hIs32pLZo_77nDwXNqtDH-Ok3S89O8h-a3VeGQMEST9Z_iqGK9TnTD0zWPzqYCHkP4J4P4NmqiwDXDpGhTjQY7RiwNq7M3gjpLbauVOYoDOBa-72pjNYC-eJFNnZFNB-aFFh1XkNTd19RE7USJa5jseURXsF0D4_vMjR"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Disciplines Section (Bento Grid Style) -->
+<section class="py-section-padding px-gutter w-full bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto">
+<div class="mb-stack-lg flex justify-between items-end border-b border-muted-border pb-stack-sm">
+<h3 class="font-headline-lg text-headline-lg text-pure-white">Disciplines</h3>
+<span class="font-label-caps text-label-caps text-on-surface-variant">02 // EXPERTISE</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-[1px] bg-muted-border">
+<!-- Kitchens -->
+<div class="md:col-span-7 bg-surface-container-lowest relative group overflow-hidden min-h-[500px]">
+<img alt="Minimalist Kitchen Design" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-70 transition-opacity duration-700" data-alt="A wide view of an ultra-minimalist, high-end kitchen space featuring seamless, handle-less cabinetry in a deep graphite finish. A monolithic island made of dark, heavily veined stone anchors the center. The lighting is moody and architectural, emphasizing clean, sharp lines and geometric forms. The atmosphere is sterile yet luxurious, reflecting a sophisticated dark-mode design sensibility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqYnCU8-vl4VJC1cE_iokZxNDckLa80MT8anZ28t675OJ1Xp4_b4S6fatmfZBfDjEHG8ZQzvi_5EibTaoVidlCMfyH9m76OlAgnRk64i_CJIh_82I83IiHaQyS3a4bt1f002JSEbOWR_7pB8oNYvph0Y2CIkEcvplXlsm4corwzPJ3t3D_a7AuiPX8_tGGwSCNH0JUcE0wW1X541_2PPjxNb_DyCUSoq4iXwjfRwOGf7cTXY0phHQ6UcSqZhTA4WG6kBbikQxvsfH_"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-graphite/90 via-deep-graphite/20 to-transparent"></div>
+<div class="relative h-full flex flex-col justify-end p-stack-lg z-10">
+<span class="material-symbols-outlined text-aged-brass mb-stack-sm text-[32px] font-light" style="font-variation-settings: 'wght' 200;">countertops</span>
+<h4 class="font-headline-md text-headline-md text-pure-white mb-stack-sm">Kitchens</h4>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md opacity-0 group-hover:opacity-100 transition-opacity duration-700 transform translate-y-4 group-hover:translate-y-0">Culinary spaces designed as architectural centerpieces. Precision engineering meets monolithic stone and rare timbers.</p>
+</div>
+</div>
+<!-- Wardrobes -->
+<div class="md:col-span-5 bg-surface-container-lowest relative group overflow-hidden min-h-[500px]">
+<img alt="Luxury Wardrobe Detail" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-70 transition-opacity duration-700" data-alt="A close-up shot of a luxurious, custom-built walk-in wardrobe interior. The focus is on the rich, dark walnut shelving and subtle, integrated warm LED strip lighting that illuminates meticulously organized high-end garments. The design is sleek, geometric, and utilizes glass elements to create a sense of depth. The overall aesthetic is intimate, structured, and deeply luxurious." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD94mgQQ4IUKkIKxyj0_7Pi8iFMr5KnvBA4tWs4SCNj_lBcXSogjxrQv96rBToRHGBQJb678A337FUmBEU4myCD53Zg7hxQTzWRQCis8Es6DkQBc5-ZFlKbrinqZyDAjV7TMT7qHu2yAzKelLU0pTOghb4cMruR-1KPCtZ1-18fb85BLGFAi7UUquzwyDGejVHfbXyoIf0arkurEDqwOF488ySaLacIbak7IpzJCIod5szEHLWg-9YN3t6GE7RpnmcYLkAEauj8Pqto"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-graphite/90 via-deep-graphite/20 to-transparent"></div>
+<div class="relative h-full flex flex-col justify-end p-stack-lg z-10">
+<span class="material-symbols-outlined text-aged-brass mb-stack-sm text-[32px] font-light" style="font-variation-settings: 'wght' 200;">door_sliding</span>
+<h4 class="font-headline-md text-headline-md text-pure-white mb-stack-sm">Wardrobes</h4>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md opacity-0 group-hover:opacity-100 transition-opacity duration-700 transform translate-y-4 group-hover:translate-y-0">Private sanctuaries of organization. Tailored storage solutions featuring integrated lighting and sumptuous leather detailing.</p>
+</div>
+</div>
+<!-- Yacht Furniture -->
+<div class="md:col-span-6 bg-surface-container-lowest relative group overflow-hidden min-h-[400px]">
+<img alt="Yacht Interior Furniture" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-70 transition-opacity duration-700" data-alt="An interior shot of a luxury superyacht salon at night. The focus is on bespoke, built-in mahogany cabinetry and sleek, low-profile seating that integrates seamlessly with the vessel's curved hull. Through the porthole windows, the dark ocean is visible. The lighting is sophisticated and subdued, highlighting polished surfaces and metallic accents against a rich, dark backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbCFxnCcmeKvUqNPczyO00ZnA6mDtdT5Dpcwmbps6dffa1-P6tPgeB8d40ECYYj9NRsaNnsbjZ3Yez3eLjzI-I91G323ryLmQoaQJ2nW1rU0rWYOoKBy5clxoWWuSAdltD81EHwaPOELWKUMd28jQP8o9VMx0OWfLvb5EAAmFB1vIGzF6tSZvuG18LJ6XGJgvITq1a6jxgD6kf9-O1fDdm7VCllsc6bcmluoqQxjFpkqCkTiFZvFMLR8is5D3LgKC0_PpI5hA095Hr"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-graphite/90 via-deep-graphite/20 to-transparent"></div>
+<div class="relative h-full flex flex-col justify-end p-stack-lg z-10">
+<span class="material-symbols-outlined text-aged-brass mb-stack-sm text-[32px] font-light" style="font-variation-settings: 'wght' 200;">directions_boat</span>
+<h4 class="font-headline-md text-headline-md text-pure-white mb-stack-sm">Yacht Furniture</h4>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md opacity-0 group-hover:opacity-100 transition-opacity duration-700 transform translate-y-4 group-hover:translate-y-0">Marine-grade luxury. Lightweight, precision-engineered joinery crafted to withstand the elements without compromising elegance.</p>
+</div>
+</div>
+<!-- Interior Furniture -->
+<div class="md:col-span-6 bg-surface-container-lowest relative group overflow-hidden min-h-[400px]">
+<img alt="Bespoke Interior Furniture" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-70 transition-opacity duration-700" data-alt="A solitary, avant-garde lounge chair designed from bent dark ash wood and upholstered in premium black leather, placed in the center of an empty, expansive concrete-walled room. The lighting is a stark, single spotlight from above, creating sharp, dramatic shadows. The image conveys a sense of high-end gallery art furniture, embodying the 'less but better' philosophy in a stark, minimalist setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARmMQY_dPHERfjoYVcHWghkNRm7nS3W6cHVPtLBsHyrxhHrHOk_ky7orUgEtRgX-Lm_npq_zQQgx12GRxz49fliSawgItB-tSOJ3sGtcgXMSHWEU3p7HzwygJAM_aq3wqjXOj9bh-P9FAPweaYPmNVRxgIgqfrRP7dEWF5lf_st1qPsryFpC6-8FN7ql_JckBj2NClhwe05dwL9XF2WNxQ15iR7Z2oLFIL75_MhVTZToorjtmWS96xKbJvnl0X8qVkgtAZG3hCyjLL"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-graphite/90 via-deep-graphite/20 to-transparent"></div>
+<div class="relative h-full flex flex-col justify-end p-stack-lg z-10">
+<span class="material-symbols-outlined text-aged-brass mb-stack-sm text-[32px] font-light" style="font-variation-settings: 'wght' 200;">chair</span>
+<h4 class="font-headline-md text-headline-md text-pure-white mb-stack-sm">Interior Furniture</h4>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md opacity-0 group-hover:opacity-100 transition-opacity duration-700 transform translate-y-4 group-hover:translate-y-0">Standalone masterpieces. Sculptural forms designed to anchor a room, blurring the line between functional furniture and fine art.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Projects (Asymmetric Layout) -->
+<section class="py-section-padding px-gutter w-full bg-background border-b border-muted-border">
+<div class="max-w-container-max mx-auto">
+<div class="mb-section-padding text-center">
+<span class="font-label-caps text-label-caps text-aged-brass block mb-stack-sm">PORTFOLIO</span>
+<h3 class="font-display-xl text-display-xl text-pure-white">Selected Works</h3>
+</div>
+<!-- Project 1 -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-section-padding items-center">
+<div class="md:col-span-7 aspect-[16/9] overflow-hidden group">
+<img alt="Villa Ascari Kitchen" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105" data-alt="A wide architectural shot of a massive living and dining space in a contemporary luxury villa. The room features dark, moody tones with expansive black slatted wood wall panels and a striking monolithic dark marble dining table. Floor-to-ceiling glass doors look out onto an illuminated night-time infinity pool. The aesthetic is extremely high-end, employing a dark mode palette with precise, sharp architectural lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuGwE5kgY7Ed2QOelSGG-k--jEqIRiE1OlxTffhFduzuRY2_6fjUYI_7-vfFHSu7e20LJWDCD4Bo1oq2xH0YPRz94ytS0hIheTGig6xO2ffM2xT5FYjpc_WbcC1IjQLWmUHZ1561orQ0xRJBuUQawBm4ILrILy93MSyD4N6txQ_UbAQ9U9fLzqrzjBV_r2lSyvx6q5nSnTFRQP9GMLoIaeDsnL9GBg7-jXJNA5BeIIG4uqvPLC_QPoX3OasPCD1P1LaPA7R-CTcLHx"/>
+</div>
+<div class="md:col-span-4 md:col-start-9 flex flex-col justify-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-stack-sm">LAKE COMO, ITALY</span>
+<h4 class="font-headline-lg text-headline-lg text-pure-white mb-stack-md">Villa Ascari</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg">A comprehensive fit-out featuring smoked oak wall panelling, hidden pivot doors, and a spectacular cantilevered kitchen island engineered from a single block of Nero Marquina marble.</p>
+<a class="font-label-caps text-label-caps text-pure-white border-b border-muted-border pb-1 w-max hover:border-aged-brass transition-colors duration-300" href="#">VIEW PROJECT</a>
+</div>
+</div>
+<!-- Project 2 (Reversed) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-4 md:col-start-2 order-2 md:order-1 flex flex-col justify-center mt-stack-lg md:mt-0">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-stack-sm">MONACO</span>
+<h4 class="font-headline-lg text-headline-lg text-pure-white mb-stack-md">M/Y Stella Maris</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg">Bespoke joinery for an 80-meter superyacht. The brief demanded ultra-lightweight construction using honeycomb coring, finished in high-gloss Macassar ebony with inlaid aged brass detailing.</p>
+<a class="font-label-caps text-label-caps text-pure-white border-b border-muted-border pb-1 w-max hover:border-aged-brass transition-colors duration-300" href="#">VIEW PROJECT</a>
+</div>
+<div class="md:col-span-6 md:col-start-7 aspect-[4/5] overflow-hidden group order-1 md:order-2">
+<img alt="Yacht Interior Details" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105" data-alt="A meticulously composed close-up of custom interior woodwork inside a luxury yacht. The image highlights the high-gloss finish on rare, striped Macassar ebony wood panels. A hairline strip of aged brass runs horizontally across the wood, demonstrating flawless joinery. The lighting is soft and reflective, emphasizing the deep, rich tones of the wood against a sophisticated, dark architectural background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9ZMnZksvEVPnOUoT09Mly4SpUNjbm1FWZg7I242yNCMIe871Yl7ryf_XBbLaWnJW3URTscyW6x_GnUkgbmfrSY0BtzkrKoS9HFGtGSvp7qbYdQNnJkzAyueKGxEiC8uZ2Stfbx2-WjL8mJTc4Gp8NNb8-RAzGgyXmd2jVQMbCO_mcWpajLZoY9T-8qdPf9AvveMn_1fkq4gRd__HB7TTkLjYhdRnpWpIUq19nqup3dnc_gK7om5dC_Pi-J8Oy-5MnF1jCAinPEV2a"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer from JSON -->
+<footer class="bg-surface dark:bg-surface-container-lowest w-full border-t border-muted-border">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-gutter py-stack-lg max-w-container-max mx-auto gap-stack-md">
+<div class="text-center md:text-left">
+<span class="font-headline-md text-headline-md text-on-surface">ARCHÉ STUDIO</span>
+</div>
+<nav class="flex flex-wrap justify-center gap-gutter">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">COLLECTIONS</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">PROCESS</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">JOURNAL</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">CONTACT</a>
+</nav>
+<div class="text-center md:text-right">
+<span class="font-label-caps text-label-caps text-on-surface dark:text-on-surface-variant">© 2024 ARCHÉ BESPOKE CARPENTRY. ALL RIGHTS RESERVED.</span>
+</div>
+</div>
+</footer>
+</body></html>
