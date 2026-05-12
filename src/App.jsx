@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
   contentByLanguage,
   icons,
@@ -7,7 +7,31 @@ import {
   supportedLanguages,
 } from "./data.js";
 
+const languageRoutes = {
+  en: "/en",
+  ru: "/ru",
+  el: "/el",
+};
+
+const hreflangByLanguage = {
+  en: "en",
+  ru: "ru",
+  el: "el-GR",
+};
+
+function getPathLanguage(pathname = "") {
+  const segment = pathname.split("/").filter(Boolean)[0];
+  return supportedLanguages.some((language) => language.code === segment) ? segment : null;
+}
+
 function detectLanguage() {
+  if (typeof window !== "undefined") {
+    const pathLanguage = getPathLanguage(window.location.pathname);
+    if (pathLanguage) {
+      return pathLanguage;
+    }
+  }
+
   if (typeof navigator === "undefined") {
     return "en";
   }
@@ -24,6 +48,147 @@ function detectLanguage() {
   }
 
   return "en";
+}
+
+function getManagedHeadElement(selector, createElement) {
+  const existing = document.head.querySelector(selector);
+  if (existing) {
+    return existing;
+  }
+
+  const element = createElement();
+  document.head.appendChild(element);
+  return element;
+}
+
+function setMetaAttribute(attribute, key, content) {
+  if (!content) {
+    return;
+  }
+
+  const selector = `meta[${attribute}="${key}"]`;
+  const element = getManagedHeadElement(selector, () => {
+    const meta = document.createElement("meta");
+    meta.setAttribute(attribute, key);
+    return meta;
+  });
+  element.setAttribute("content", content);
+}
+
+function getSiteOrigin() {
+  if (typeof window === "undefined") {
+    return "https://archestudio.gr";
+  }
+
+  return window.location.origin;
+}
+
+function setSeoHead(language, t) {
+  const origin = getSiteOrigin();
+  const languagePath = languageRoutes[language] ?? languageRoutes.en;
+  const canonicalUrl = `${origin}${languagePath}`;
+  const imageUrl = new URL(images.hero, origin).href;
+  const locale = t.meta.locale ?? "en_US";
+
+  document.documentElement.lang = language;
+  document.title = t.meta.title;
+
+  setMetaAttribute("name", "description", t.meta.description);
+  setMetaAttribute("name", "keywords", t.meta.keywords);
+  setMetaAttribute("name", "robots", "index, follow, max-image-preview:large");
+  setMetaAttribute("name", "theme-color", "#141313");
+
+  setMetaAttribute("property", "og:title", t.meta.title);
+  setMetaAttribute("property", "og:description", t.meta.description);
+  setMetaAttribute("property", "og:type", "website");
+  setMetaAttribute("property", "og:url", canonicalUrl);
+  setMetaAttribute("property", "og:image", imageUrl);
+  setMetaAttribute("property", "og:locale", locale);
+
+  setMetaAttribute("name", "twitter:card", "summary_large_image");
+  setMetaAttribute("name", "twitter:title", t.meta.title);
+  setMetaAttribute("name", "twitter:description", t.meta.description);
+  setMetaAttribute("name", "twitter:image", imageUrl);
+
+  document.head.querySelectorAll("[data-seo-link]").forEach((element) => element.remove());
+
+  const canonical = document.createElement("link");
+  canonical.setAttribute("rel", "canonical");
+  canonical.setAttribute("href", canonicalUrl);
+  canonical.setAttribute("data-seo-link", "true");
+  document.head.appendChild(canonical);
+
+  supportedLanguages.forEach((item) => {
+    const alternate = document.createElement("link");
+    alternate.setAttribute("rel", "alternate");
+    alternate.setAttribute("hreflang", hreflangByLanguage[item.code] ?? item.code);
+    alternate.setAttribute("href", `${origin}${languageRoutes[item.code]}`);
+    alternate.setAttribute("data-seo-link", "true");
+    document.head.appendChild(alternate);
+  });
+
+  const xDefault = document.createElement("link");
+  xDefault.setAttribute("rel", "alternate");
+  xDefault.setAttribute("hreflang", "x-default");
+  xDefault.setAttribute("href", `${origin}/`);
+  xDefault.setAttribute("data-seo-link", "true");
+  document.head.appendChild(xDefault);
+
+  document.head.querySelectorAll("[data-seo-json]").forEach((element) => element.remove());
+
+  const sameAs = socialLinks
+    .filter((item) => item.href.startsWith("https://"))
+    .map((item) => item.href);
+  const offerCatalog = {
+    "@type": "OfferCatalog",
+    name: t.seo.offerCatalogName,
+    itemListElement: t.services.map((service) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: service.title,
+        description: service.text,
+        areaServed: t.seo.areaServed,
+      },
+    })),
+  };
+
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "ARCHÉ STUDIO",
+      url: origin,
+      inLanguage: hreflangByLanguage[language] ?? language,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      name: "ARCHÉ STUDIO",
+      alternateName: "ARCHÉ Bespoke Carpentry",
+      url: canonicalUrl,
+      image: imageUrl,
+      description: t.seo.schemaDescription,
+      telephone: "+30 210 000 0000",
+      priceRange: "€€€",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Athens",
+        addressRegion: "Attica",
+        addressCountry: "GR",
+      },
+      areaServed: t.seo.areaServed,
+      knowsAbout: t.seo.knowsAbout,
+      sameAs,
+      hasOfferCatalog: offerCatalog,
+    },
+  ];
+
+  const script = document.createElement("script");
+  script.type = "application/ld+json";
+  script.setAttribute("data-seo-json", "true");
+  script.textContent = JSON.stringify(schema);
+  document.head.appendChild(script);
 }
 
 function useReveal() {
@@ -208,7 +373,15 @@ function SectionIntro({ eyebrow, title, text, align = "left" }) {
   return (
     <div className={`section-intro section-intro-${align}`} data-reveal>
       <p className="eyebrow">{eyebrow}</p>
-      <h2>{title}</h2>
+      <h2>
+        {Array.isArray(title)
+          ? title.map((line) => (
+              <span className="title-line" key={line}>
+                {line}
+              </span>
+            ))
+          : title}
+      </h2>
       {text ? <p>{text}</p> : null}
     </div>
   );
@@ -306,16 +479,119 @@ function Services({ t }) {
 
 function Projects({ t }) {
   const [filter, setFilter] = useState("__all");
-  const categories = useMemo(
-    () => Array.from(new Set(t.projects.map((project) => project.category))),
-    [t.projects],
-  );
+  const trackRef = useRef(null);
+  const categoryOrder = t.projectsIntro.categoryOrder ?? [];
+  const sortedProjects = useMemo(() => {
+    const orderIndex = new Map(categoryOrder.map((category, index) => [category, index]));
+    return [...t.projects].sort((first, second) => {
+      const firstIndex = orderIndex.get(first.category) ?? Number.MAX_SAFE_INTEGER;
+      const secondIndex = orderIndex.get(second.category) ?? Number.MAX_SAFE_INTEGER;
+      return firstIndex - secondIndex;
+    });
+  }, [categoryOrder, t.projects]);
+  const categories = useMemo(() => {
+    const projectCategories = Array.from(new Set(sortedProjects.map((project) => project.category)));
+    const orderedCategories = categoryOrder.filter((category) => projectCategories.includes(category));
+    const remainingCategories = projectCategories.filter((category) => !orderedCategories.includes(category));
+    return [...orderedCategories, ...remainingCategories];
+  }, [categoryOrder, sortedProjects]);
   const visibleProjects =
-    filter === "__all" ? t.projects : t.projects.filter((project) => project.category === filter);
+    filter === "__all"
+      ? sortedProjects
+      : sortedProjects.filter((project) => project.category === filter);
 
   useEffect(() => {
     setFilter("__all");
   }, [t]);
+
+  useEffect(() => {
+    trackRef.current?.scrollTo({ left: 0, behavior: "smooth" });
+  }, [filter]);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) {
+      return undefined;
+    }
+
+    let frameId = 0;
+    let resizeObserver;
+
+    const updateSlots = () => {
+      const cards = Array.from(track.querySelectorAll(".project-card"));
+      const trackRect = track.getBoundingClientRect();
+      const trackCenter = trackRect.left + trackRect.width / 2;
+      const styles = window.getComputedStyle(track);
+      const gap = parseFloat(styles.columnGap || styles.gap) || 24;
+      const mobile = window.matchMedia("(max-width: 759px)").matches;
+      const tilt = mobile ? 4.2 : 7.2;
+      const maxDrop = mobile ? 7 : 14;
+      const maxDepth = mobile ? 12 : 34;
+      const minScale = mobile ? 0.965 : 0.925;
+      const minOpacity = mobile ? 0.78 : 0.62;
+
+      cards.forEach((card) => {
+        const rect = card.getBoundingClientRect();
+        const cardCenter = rect.left + rect.width / 2;
+        const distance = (cardCenter - trackCenter) / Math.max(rect.width + gap, 1);
+        const offset = Math.max(-1.35, Math.min(1.35, distance));
+        const absOffset = Math.min(Math.abs(offset), 1.15);
+        const depth = Math.max(0, 1 - Math.min(absOffset, 1));
+        const scale = minScale + depth * (1 - minScale);
+        const opacity = minOpacity + depth * (1 - minOpacity);
+        const y = absOffset * maxDrop;
+        const z = depth * maxDepth;
+        const rotate = offset * -tilt;
+        const shadow = 0.16 + depth * 0.22;
+
+        card.style.setProperty("--slot-y", `${y.toFixed(2)}px`);
+        card.style.setProperty("--slot-z", `${z.toFixed(2)}px`);
+        card.style.setProperty("--slot-rotate", `${rotate.toFixed(2)}deg`);
+        card.style.setProperty("--slot-scale", scale.toFixed(3));
+        card.style.setProperty("--slot-opacity", opacity.toFixed(3));
+        card.style.setProperty("--slot-shadow", shadow.toFixed(3));
+        card.classList.toggle("is-center-slot", absOffset < 0.36);
+      });
+    };
+
+    const scheduleUpdate = () => {
+      window.cancelAnimationFrame(frameId);
+      frameId = window.requestAnimationFrame(updateSlots);
+    };
+
+    scheduleUpdate();
+    track.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+
+    if ("ResizeObserver" in window) {
+      resizeObserver = new ResizeObserver(scheduleUpdate);
+      resizeObserver.observe(track);
+    }
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+      track.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+      resizeObserver?.disconnect();
+    };
+  }, [visibleProjects]);
+
+  const scrollProjects = (direction) => {
+    const track = trackRef.current;
+    if (!track) {
+      return;
+    }
+
+    const card = track.querySelector(".project-card");
+    const styles = window.getComputedStyle(track);
+    const gap = parseFloat(styles.columnGap || styles.gap) || 24;
+    const distance = card ? card.getBoundingClientRect().width + gap : track.clientWidth * 0.86;
+
+    track.scrollBy({
+      left: direction * distance,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <section className="projects section" id="projects">
@@ -325,28 +601,46 @@ function Projects({ t }) {
           title={t.projectsIntro.title}
           text={t.projectsIntro.text}
         />
-        <div className="filter-bar" aria-label="Project filters" data-reveal>
-          <button
-            type="button"
-            className={filter === "__all" ? "is-active" : ""}
-            onClick={() => setFilter("__all")}
-          >
-            {t.projectsIntro.all}
-          </button>
-          {categories.map((category) => (
+        <div className="project-toolbar" data-reveal>
+          <div className="filter-bar" aria-label="Project filters">
             <button
               type="button"
-              key={category}
-              className={filter === category ? "is-active" : ""}
-              onClick={() => setFilter(category)}
+              className={filter === "__all" ? "is-active" : ""}
+              onClick={() => setFilter("__all")}
             >
-              {category}
+              {t.projectsIntro.all}
             </button>
-          ))}
+            {categories.map((category) => (
+              <button
+                type="button"
+                key={category}
+                className={filter === category ? "is-active" : ""}
+                onClick={() => setFilter(category)}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+          <div className="project-controls">
+            <button
+              type="button"
+              aria-label={t.projectsIntro.previous}
+              onClick={() => scrollProjects(-1)}
+            >
+              <icons.ChevronLeft size={20} strokeWidth={1.55} />
+            </button>
+            <button
+              type="button"
+              aria-label={t.projectsIntro.next}
+              onClick={() => scrollProjects(1)}
+            >
+              <icons.ChevronRight size={20} strokeWidth={1.55} />
+            </button>
+          </div>
         </div>
       </div>
 
-      <div className="project-grid">
+      <div className="project-grid" ref={trackRef} aria-label={t.projectsIntro.eyebrow}>
         {visibleProjects.map((project, index) => (
           <article
             className={`project-card project-card-${index % 2 ? "offset" : "main"}`}
@@ -472,7 +766,7 @@ function Contact({ t }) {
             </a>
             <span>
               <icons.MapPin size={18} strokeWidth={1.6} />
-              Athens Riviera / Monaco / London
+              {t.contact.location}
             </span>
           </div>
           <div className="contact-social-card">
@@ -554,21 +848,34 @@ function Footer({ t }) {
 }
 
 export default function App() {
-  const [language, setLanguage] = useState(detectLanguage);
+  const [language, setLanguageState] = useState(detectLanguage);
   const t = contentByLanguage[language] ?? contentByLanguage.en;
 
   useReveal();
   useHashScroll();
 
-  useEffect(() => {
-    document.documentElement.lang = language;
-    document.title = t.meta.title;
+  const setLanguage = (nextLanguage) => {
+    setLanguageState(nextLanguage);
 
-    const description = document.querySelector('meta[name="description"]');
-    if (description) {
-      description.setAttribute("content", t.meta.description);
+    if (typeof window !== "undefined") {
+      const nextPath = languageRoutes[nextLanguage] ?? languageRoutes.en;
+      const nextUrl = `${nextPath}${window.location.hash || ""}`;
+      window.history.pushState({ language: nextLanguage }, "", nextUrl);
     }
+  };
+
+  useEffect(() => {
+    setSeoHead(language, t);
   }, [language, t]);
+
+  useEffect(() => {
+    const handlePopState = () => {
+      setLanguageState(detectLanguage());
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
 
   return (
     <>

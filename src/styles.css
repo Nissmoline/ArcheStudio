@@ -656,6 +656,10 @@ h1 {
   text-wrap: balance;
 }
 
+.title-line {
+  display: block;
+}
+
 .section-intro p:not(.eyebrow),
 .studio-copy p:not(.eyebrow),
 .craft-copy p:not(.eyebrow),
@@ -781,11 +785,12 @@ h1 {
 .service-content {
   position: relative;
   z-index: 1;
-  min-height: 304px;
+  min-height: inherit;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 22px;
+  transition: transform 420ms var(--ease);
 }
 
 .service-number {
@@ -819,9 +824,19 @@ h1 {
   line-height: 1.58;
 }
 
+.service-card:hover .service-content {
+  transform: translateY(-4px);
+}
+
 .projects-heading {
   width: min(100%, var(--container));
   margin: 0 auto;
+}
+
+.project-toolbar {
+  width: 100%;
+  display: grid;
+  gap: 14px;
 }
 
 .filter-bar {
@@ -857,11 +872,96 @@ h1 {
   color: var(--cream);
 }
 
+.project-controls {
+  display: none;
+  gap: 8px;
+}
+
+.project-controls button {
+  width: 44px;
+  height: 44px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid rgba(197, 160, 89, 0.32);
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--cream);
+  transition:
+    border-color 240ms var(--ease),
+    background 240ms var(--ease),
+    transform 240ms var(--ease);
+}
+
+.project-controls button:hover,
+.project-controls button:focus-visible {
+  border-color: var(--brass);
+  background: rgba(197, 160, 89, 0.1);
+  transform: translateY(-1px);
+}
+
 .project-grid {
   width: min(100%, var(--container));
   margin: 10px auto 0;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0 0 18px;
+  scroll-padding-inline: 0;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  perspective: 1100px;
+  perspective-origin: 50% 45%;
+  transform-style: preserve-3d;
+}
+
+.project-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.project-card {
+  --slot-y: 0px;
+  --slot-z: 0px;
+  --slot-rotate: 0deg;
+  --slot-scale: 1;
+  --slot-opacity: 1;
+  --slot-shadow: 0.18;
+  flex: 0 0 min(82vw, 360px);
+  min-width: 0;
   display: grid;
-  gap: 34px;
+  align-content: start;
+  padding: 12px;
+  scroll-snap-align: start;
+  border: 1px solid rgba(197, 160, 89, 0.16);
+  background:
+    linear-gradient(145deg, rgba(197, 160, 89, 0.07), transparent 34%),
+    rgba(255, 255, 255, 0.018);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, var(--slot-shadow));
+  opacity: var(--slot-opacity);
+  transform:
+    translate3d(0, var(--slot-y), var(--slot-z))
+    rotateY(var(--slot-rotate))
+    scale(var(--slot-scale));
+  transform-origin: center;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+  transition:
+    border-color 260ms var(--ease),
+    background 260ms var(--ease),
+    box-shadow 260ms var(--ease),
+    opacity 220ms var(--ease),
+    transform 320ms var(--ease);
+}
+
+.project-card:hover {
+  border-color: rgba(197, 160, 89, 0.36);
+  background:
+    linear-gradient(145deg, rgba(197, 160, 89, 0.11), transparent 38%),
+    rgba(255, 255, 255, 0.028);
+}
+
+.project-card.is-center-slot {
+  border-color: rgba(197, 160, 89, 0.42);
 }
 
 .projects .section-intro,
@@ -883,6 +983,7 @@ h1 {
 .project-image {
   aspect-ratio: 4 / 3;
   overflow: hidden;
+  border: 1px solid var(--line);
   background: var(--surface);
 }
 
@@ -899,6 +1000,10 @@ h1 {
 
 .project-card:hover .project-image img {
   transform: scale(1.055);
+}
+
+.project-card.is-center-slot .project-image img {
+  transform: scale(1.035);
 }
 
 .project-meta {
@@ -1238,6 +1343,11 @@ h1 {
     opacity: 1;
     transform: none;
   }
+
+  .project-card {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @media (min-width: 520px) {
@@ -1386,20 +1496,35 @@ h1 {
   }
 
   .project-grid {
-    grid-template-columns: repeat(12, 1fr);
-    gap: 72px 32px;
+    gap: 22px;
   }
 
   .project-card {
-    grid-column: span 6;
+    flex-basis: min(44vw, 560px);
+    padding: 16px;
   }
 
   .project-card-offset {
-    margin-top: 86px;
+    margin-top: 0;
   }
 
+  .project-image,
   .project-card-main .project-image {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 16 / 10;
+  }
+
+  .project-meta {
+    margin-top: 16px;
+  }
+
+  .project-card h3 {
+    font-size: 25px;
+  }
+
+  .project-card p {
+    color: rgba(244, 241, 238, 0.78);
+    font-size: 14px;
+    line-height: 1.58;
   }
 
   .craft-layout {
@@ -1528,41 +1653,72 @@ h1 {
     font-size: 58px;
   }
 
+  .projects .section-intro {
+    grid-template-columns: minmax(0, 1.18fr) minmax(360px, 0.82fr);
+  }
+
+  .projects .title-line {
+    white-space: nowrap;
+  }
+
+  .project-toolbar {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+  }
+
+  .filter-bar {
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+
+  .project-controls {
+    display: inline-flex;
+  }
+
   .service-grid {
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
   }
 
   .service-card {
-    grid-column: span 4;
-    min-height: 460px;
+    grid-column: auto;
+    min-height: clamp(430px, 31vw, 520px);
   }
 
   .service-card:first-child,
   .service-card:nth-child(4) {
-    grid-column: span 6;
-    min-height: 540px;
+    grid-column: auto;
+    min-height: clamp(430px, 31vw, 520px);
   }
 
   .service-card:nth-child(2),
   .service-card:nth-child(3) {
-    grid-column: span 3;
-    min-height: 540px;
+    grid-column: auto;
+    min-height: clamp(430px, 31vw, 520px);
   }
 
-  .project-card:nth-child(1) {
-    grid-column: 1 / span 7;
+  .service-content {
+    padding: 30px;
   }
 
-  .project-card:nth-child(2) {
-    grid-column: 9 / span 4;
+  .service-content h3 {
+    font-size: clamp(27px, 1.65vw, 32px);
   }
 
-  .project-card:nth-child(3) {
-    grid-column: 2 / span 5;
+  .service-content p {
+    max-width: 440px;
+    color: rgba(244, 241, 238, 0.78);
+    font-size: 15px;
+    line-height: 1.62;
   }
 
-  .project-card:nth-child(4) {
-    grid-column: 8 / span 5;
+  .project-grid {
+    gap: 24px;
+  }
+
+  .project-card {
+    flex-basis: min(28vw, 390px);
+    padding: 18px;
   }
 
   .process-list {

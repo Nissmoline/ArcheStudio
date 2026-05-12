@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://archestudio.gr/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://archestudio.gr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://archestudio.gr/en" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://archestudio.gr/ru" />
+    <xhtml:link rel="alternate" hreflang="el-GR" href="https://archestudio.gr/el" />
+  </url>
+  <url>
+    <loc>https://archestudio.gr/en</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://archestudio.gr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://archestudio.gr/en" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://archestudio.gr/ru" />
+    <xhtml:link rel="alternate" hreflang="el-GR" href="https://archestudio.gr/el" />
+  </url>
+  <url>
+    <loc>https://archestudio.gr/ru</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://archestudio.gr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://archestudio.gr/en" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://archestudio.gr/ru" />
+    <xhtml:link rel="alternate" hreflang="el-GR" href="https://archestudio.gr/el" />
+  </url>
+  <url>
+    <loc>https://archestudio.gr/el</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://archestudio.gr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://archestudio.gr/en" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://archestudio.gr/ru" />
+    <xhtml:link rel="alternate" hreflang="el-GR" href="https://archestudio.gr/el" />
+  </url>
+</urlset>
