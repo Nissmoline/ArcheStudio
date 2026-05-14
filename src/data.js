@@ -111,16 +111,16 @@ const en = {
   meta: {
     title: "Custom Kitchens, Wardrobes & Yacht Interiors in Greece | ARCHÉ STUDIO",
     description:
-      "Luxury custom kitchens, wardrobes, walk-in closets, office furniture and yacht interiors in Athens, Glyfada, Porto Rafti, Mykonos and across Greece.",
+      "Luxury custom kitchens, wardrobes, walk-in closets, office furniture and yacht interiors mainly for premium clients across Greece, with selected kitchen projects in Germany and Monaco.",
     keywords:
-      "custom kitchens Greece, bespoke kitchens Athens, luxury kitchens Glyfada, kitchen renovation Porto Rafti, custom wardrobes Athens, walk-in closets Greece, bespoke furniture Greece, yacht interiors Greece, yacht furniture, office furniture Athens, luxury carpentry Greece, villa furniture Greece",
+      "custom kitchens Greece, premium kitchens Greece, bespoke kitchens Athens, custom kitchens Germany, custom kitchens Monaco, luxury kitchens Glyfada, kitchen renovation Porto Rafti, custom wardrobes Greece, walk-in closets Greece, bespoke furniture Greece, yacht interiors Greece, yacht furniture, office furniture Athens, luxury carpentry Greece, villa furniture Greece, premium clients Greece",
     locale: "en_US",
   },
   seo: {
     schemaDescription:
-      "ARCHÉ STUDIO is a luxury carpentry atelier in Greece for custom kitchens, bespoke wardrobes, walk-in closets, office furniture, villa interiors and yacht interiors.",
+      "ARCHÉ STUDIO is a luxury carpentry atelier mainly serving premium clients across Greece, with custom kitchens, bespoke wardrobes, walk-in closets, office furniture, villa interiors, yacht interiors and selected kitchen projects in Germany and Monaco.",
     offerCatalogName: "Luxury carpentry and bespoke furniture services in Greece",
-    areaServed: ["Greece", "Athens", "Athens Riviera", "Glyfada", "Porto Rafti", "Mykonos", "Attica", "Mediterranean"],
+    areaServed: ["Greece", "Athens", "Athens Riviera", "Greek Islands", "Glyfada", "Porto Rafti", "Mykonos", "Attica", "Germany", "Monaco", "Europe", "Mediterranean"],
     knowsAbout: [
       "custom kitchens",
       "bespoke wardrobes",
@@ -151,7 +151,7 @@ const en = {
     eyebrow: "Bespoke carpentry atelier",
     title: "Custom Kitchens, Wardrobes & Luxury Furniture in Greece",
     copy:
-      "We design, craft and install luxury custom kitchens, wardrobes, walk-in closets, office furniture and bespoke interiors in Athens, Glyfada, Porto Rafti, Mykonos and across Greece, with specialist joinery for yachts.",
+      "We design, craft and install luxury custom kitchens, wardrobes, walk-in closets, office furniture and bespoke interiors mainly for premium clients across Greece. Alongside our Greek portfolio, we have delivered selected custom kitchen projects in Germany and Monaco, with specialist joinery for yachts.",
     primaryCta: "Request a Consultation",
     secondaryCta: "View Projects",
     bottom: ["Custom kitchens", "Bespoke wardrobes", "Yacht interiors"],
@@ -161,7 +161,7 @@ const en = {
     eyebrow: "The studio",
     title: "Luxury carpentry in Greece for villas, residences, offices and yachts.",
     text:
-      "ARCHÉ STUDIO is a bespoke carpentry and furniture atelier in Greece. We create custom kitchens, wardrobes, wall panels, office furniture and complete private interiors with architectural precision, premium materials and discreet project management.",
+      "ARCHÉ STUDIO is a bespoke carpentry and furniture atelier focused on premium private clients across Greece. We create custom kitchens, wardrobes, wall panels, office furniture and complete private interiors with architectural precision, premium materials and discreet project management, with selected kitchen experience in Germany and Monaco.",
   },
   stats: [
     { value: "18+", label: "years of private commissions" },
@@ -172,27 +172,27 @@ const en = {
     eyebrow: "Our Services",
     title: "Custom kitchens, wardrobes, closets, office furniture and yacht interiors.",
     text:
-      "Our core services cover luxury carpentry in Athens and across Greece: bespoke kitchens, custom wardrobes, walk-in closets, wall panels, office furniture, villa interiors and marine-grade yacht furniture.",
+      "Our core services cover luxury carpentry mainly across Greece: bespoke kitchens, custom wardrobes, walk-in closets, wall panels, office furniture, villa interiors and marine-grade yacht furniture, with selected international kitchen projects in Germany and Monaco.",
   },
   services: [
     {
       title: "Custom Kitchens in Greece",
       text:
-        "Bespoke kitchens for villas, apartments and private residences in Athens, Glyfada, Porto Rafti and across Greece, built around stone, timber, hidden storage and premium hardware.",
+        "Bespoke kitchens for villas, apartments and private residences mainly across Greece, with selected kitchen projects in Germany and Monaco. Each kitchen is built around stone, timber, hidden storage and premium hardware.",
       image: images.kitchenWarm,
       icon: icons.Home,
     },
     {
       title: "Custom Wardrobes & Storage",
       text:
-        "Tailor-made wardrobes and storage systems for Greek villas and city apartments, with premium fronts, integrated lighting, soft-close hardware and exact installation.",
+        "Tailor-made wardrobes and storage systems for villas, residences and premium apartments across Greece, with premium fronts, integrated lighting, soft-close hardware and exact installation.",
       image: images.wardrobe,
       icon: icons.DoorOpen,
     },
     {
       title: "Walk-in Closets & Dressing Rooms",
       text:
-        "Walk-in closets and dressing rooms for private homes in Greece, designed as calm boutique spaces with glass, leather, brass, oak and smart wardrobe organization.",
+        "Walk-in closets and dressing rooms for villas and private residences across Greece, designed as calm boutique spaces with glass, leather, brass, oak and smart wardrobe organization.",
       image: images.closet,
       icon: icons.Diamond,
     },
@@ -206,7 +206,7 @@ const en = {
     {
       title: "Office & Interior Furniture",
       text:
-        "Bespoke interior furniture for living rooms, bedrooms, executive offices and complete residence fit-outs in Athens, the Riviera and across Greece.",
+        "Bespoke interior furniture for living rooms, bedrooms, executive offices and complete residence fit-outs, mainly for premium clients across Greece.",
       image: images.living,
       icon: icons.Gem,
     },
@@ -221,7 +221,7 @@ const en = {
   projectsIntro: {
     eyebrow: "Our Work",
     title: ["Custom furniture projects in Greece", "and yacht interiors."],
-    text: "Explore luxury kitchens in Glyfada and Porto Rafti, wardrobes for Greek villas, office furniture in central Athens and specialist yacht interior projects.",
+    text: "Our main portfolio is in Greece: premium kitchens, wardrobes, office furniture and yacht interiors for private clients. Alongside the Greek projects, our experience includes custom kitchens in Germany and Monaco.",
     categoryOrder: ["Kitchens", "Wardrobes", "Yachts", "Offices"],
     all: "All",
     previous: "Previous projects",
@@ -363,7 +363,7 @@ const en = {
   ],
   benefitsIntro: {
     eyebrow: "Why clients choose us",
-    title: "Built for Greek villas, homes, offices and yachts that require exactness.",
+    title: "Built for premium villas, homes, offices and yachts across Greece that require exactness.",
   },
   benefits: [
     "Premium materials",
@@ -372,7 +372,7 @@ const en = {
     "Luxury finishes",
     "Full project management",
     "Architect and designer collaboration",
-    "Installation in Athens, Glyfada, Porto Rafti, Mykonos and across Greece",
+    "Installation mainly across Greece, with selected international projects in Germany and Monaco",
     "Long-lasting quality",
   ],
   contact: {
@@ -381,7 +381,7 @@ const en = {
     text:
       "Tell us about your kitchen, wardrobe, office furniture, villa interior or yacht project. ARCHÉ STUDIO will prepare the next step for a private consultation.",
     directMessage: "Message us directly",
-    location: "Athens / Glyfada / Porto Rafti / Mykonos / Greece",
+    location: "Greece / Athens / Greek Islands / Germany / Monaco",
   },
   form: {
     name: "Name",
@@ -413,16 +413,16 @@ const ru = {
   meta: {
     title: "Кухни на заказ, шкафы и мебель в Греции | ARCHÉ STUDIO",
     description:
-      "Премиальные кухни на заказ, шкафы, гардеробные, офисная мебель и яхтенные интерьеры в Афинах, Глифаде, Порто Рафти, Миконосе и по всей Греции.",
+      "Премиальные кухни на заказ, шкафы, гардеробные, офисная мебель и яхтенные интерьеры для премиальных клиентов по всей Греции. Также выполняли кухни в Германии и Монако.",
     keywords:
-      "кухни на заказ Греция, кухни на заказ Афины, кухня Глифада, кухня Порто Рафти, шкафы на заказ Афины, гардеробные на заказ Греция, мебель на заказ Греция, столярные изделия Греция, мебель для вилл, мебель для яхт, яхтенные интерьеры, офисная мебель Афины",
+      "кухни на заказ Греция, премиальные кухни Греция, кухни на заказ Афины, кухня Глифада, кухня Порто Рафти, кухни на заказ Германия, кухни на заказ Монако, шкафы на заказ Греция, гардеробные на заказ Греция, мебель на заказ Греция, столярные изделия Греция, мебель для вилл, мебель для яхт, яхтенные интерьеры, офисная мебель Афины, премиальные клиенты Греция",
     locale: "ru_RU",
   },
   seo: {
     schemaDescription:
-      "ARCHÉ STUDIO — премиальное столярное ателье в Греции для кухонь на заказ, шкафов, гардеробных, офисной мебели, интерьеров вилл и яхтенных интерьеров.",
+      "ARCHÉ STUDIO — премиальное столярное ателье в Греции для кухонь на заказ, шкафов, гардеробных, офисной мебели, интерьеров вилл и яхтенных интерьеров. Основная работа — премиальные клиенты по всей Греции, также есть опыт кухонь в Германии и Монако.",
     offerCatalogName: "Премиальные столярные услуги и мебель на заказ в Греции",
-    areaServed: ["Греция", "Афины", "Афинская Ривьера", "Глифада", "Порто Рафти", "Миконос", "Аттика", "Средиземное море"],
+    areaServed: ["Греция", "Афины", "Афинская Ривьера", "Греческие острова", "Глифада", "Порто Рафти", "Миконос", "Аттика", "Германия", "Монако", "Европа", "Средиземное море"],
     knowsAbout: [
       "кухни на заказ",
       "шкафы на заказ",
@@ -453,7 +453,7 @@ const ru = {
     eyebrow: "Столярное ателье на заказ",
     title: "Кухни, шкафы и мебель премиум-класса в Греции",
     copy:
-      "Проектируем, изготавливаем и устанавливаем кухни на заказ, шкафы, гардеробные, офисную мебель и интерьерные решения в Афинах, Глифаде, Порто Рафти, Миконосе и по всей Греции. Отдельное направление — мебель и столярные решения для яхт.",
+      "Проектируем, изготавливаем и устанавливаем кухни на заказ, шкафы, гардеробные, офисную мебель и интерьерные решения в основном для премиальных клиентов по всей Греции. Также у нас есть опыт кухонь в Германии и Монако. Отдельное направление — мебель и столярные решения для яхт.",
     primaryCta: "Запросить консультацию",
     secondaryCta: "Смотреть проекты",
     bottom: ["Кухни на заказ", "Шкафы и гардеробные", "Яхтенные интерьеры"],
@@ -463,7 +463,7 @@ const ru = {
     eyebrow: "Студия",
     title: "Премиальная столярка в Греции для вилл, домов, офисов и яхт.",
     text:
-      "ARCHÉ STUDIO — столярное и мебельное ателье в Греции. Мы создаём кухни на заказ, шкафы, гардеробные, стеновые панели, офисную мебель и комплексные частные интерьеры с архитектурной точностью и премиальными материалами.",
+      "ARCHÉ STUDIO — столярное и мебельное ателье для премиальных частных клиентов по всей Греции. Мы создаём кухни на заказ, шкафы, гардеробные, стеновые панели, офисную мебель и комплексные частные интерьеры с архитектурной точностью и премиальными материалами, а также имеем опыт кухонных проектов в Германии и Монако.",
   },
   stats: [
     { value: "18+", label: "лет частных проектов" },
@@ -474,27 +474,27 @@ const ru = {
     eyebrow: "Наши услуги",
     title: "Кухни на заказ, шкафы, гардеробные, офисная мебель и яхтенные интерьеры.",
     text:
-      "Наши услуги закрывают премиальную столярку в Афинах и по всей Греции: кухни на заказ, шкафы, гардеробные, стеновые панели, офисная мебель, интерьеры вилл и мебель для яхт.",
+      "Наши услуги закрывают премиальную столярку по всей Греции: кухни на заказ, шкафы, гардеробные, стеновые панели, офисная мебель, интерьеры вилл и мебель для яхт. Есть отдельный международный опыт кухонь в Германии и Монако.",
   },
   services: [
     {
       title: "Кухни на заказ в Греции",
       text:
-        "Кухни на заказ для вилл, апартаментов и частных резиденций в Афинах, Глифаде, Порто Рафти и по всей Греции: камень, дерево, скрытое хранение и премиальная фурнитура.",
+        "Кухни на заказ для вилл, апартаментов и частных резиденций в основном по всей Греции, а также отдельные кухонные проекты в Германии и Монако: камень, дерево, скрытое хранение и премиальная фурнитура.",
       image: images.kitchenWarm,
       icon: icons.Home,
     },
     {
       title: "Шкафы на заказ",
       text:
-        "Шкафы на заказ и системы хранения для вилл и городских апартаментов в Греции: премиальные фасады, встроенная подсветка, мягкое закрывание и точная установка.",
+        "Шкафы на заказ и системы хранения для вилл, резиденций и премиальных апартаментов по всей Греции: премиальные фасады, встроенная подсветка, мягкое закрывание и точная установка.",
       image: images.wardrobe,
       icon: icons.DoorOpen,
     },
     {
       title: "Гардеробные на заказ",
       text:
-        "Гардеробные на заказ для частных домов в Греции: boutique-пространства со стеклом, кожей, латунью, дубом и продуманной организацией хранения.",
+        "Гардеробные на заказ для вилл и частных резиденций по всей Греции: boutique-пространства со стеклом, кожей, латунью, дубом и продуманной организацией хранения.",
       image: images.closet,
       icon: icons.Diamond,
     },
@@ -508,7 +508,7 @@ const ru = {
     {
       title: "Офисная и интерьерная мебель",
       text:
-        "Мебель на заказ для гостиных, спален, кабинетов, офисов и комплексного оснащения частных резиденций в Афинах, на Ривьере и по всей Греции.",
+        "Мебель на заказ для гостиных, спален, кабинетов, офисов и комплексного оснащения частных резиденций, в основном для премиальных клиентов по всей Греции.",
       image: images.living,
       icon: icons.Gem,
     },
@@ -523,7 +523,7 @@ const ru = {
   projectsIntro: {
     eyebrow: "Наши работы",
     title: ["Мебель на заказ в Греции", "и яхтенные интерьеры."],
-    text: "В портфолио — кухни в Глифаде и Порто Рафти, шкафы для вилл в Греции, офисная мебель в центре Афин и специализированные яхтенные интерьеры.",
+    text: "Основное портфолио — премиальные проекты в Греции: кухни, шкафы, офисная мебель, интерьеры вилл и яхтенные работы. Также у нас есть опыт кухонь на заказ в Германии и Монако.",
     categoryOrder: ["Кухни", "Шкафы", "Яхты", "Офисы"],
     all: "Все",
     previous: "Предыдущие проекты",
@@ -665,7 +665,7 @@ const ru = {
   ],
   benefitsIntro: {
     eyebrow: "Почему выбирают нас",
-    title: "Для вилл, домов, офисов в Греции и яхт, где нужна абсолютная точность.",
+    title: "Для премиальных вилл, домов, офисов в Греции и яхт, где нужна абсолютная точность.",
   },
   benefits: [
     "Премиальные материалы",
@@ -674,7 +674,7 @@ const ru = {
     "Luxury-отделки",
     "Полное управление проектом",
     "Работа с архитекторами и дизайнерами",
-    "Установка в Афинах, Глифаде, Порто Рафти, Миконосе и по всей Греции",
+    "Установка в основном по всей Греции, отдельные проекты в Германии и Монако",
     "Долговечное качество",
   ],
   contact: {
@@ -683,7 +683,7 @@ const ru = {
     text:
       "Расскажите о кухне, шкафах, гардеробной, офисной мебели, интерьере виллы или яхтенном проекте. ARCHÉ STUDIO подготовит следующий шаг для частной консультации.",
     directMessage: "Напишите нам напрямую",
-    location: "Афины / Глифада / Порто Рафти / Миконос / Греция",
+    location: "Греция / Афины / Греческие острова / Германия / Монако",
   },
   form: {
     name: "Имя",
@@ -715,16 +715,16 @@ const el = {
   meta: {
     title: "Κουζίνες κατά παραγγελία, ντουλάπες και έπιπλα στην Ελλάδα | ARCHÉ STUDIO",
     description:
-      "Πολυτελείς κουζίνες κατά παραγγελία, ντουλάπες, γκαρνταρόμπες, έπιπλα γραφείου και εσωτερικά γιοτ σε Αθήνα, Γλυφάδα, Πόρτο Ράφτη, Μύκονο και όλη την Ελλάδα.",
+      "Πολυτελείς κουζίνες κατά παραγγελία, ντουλάπες, γκαρνταρόμπες, έπιπλα γραφείου και εσωτερικά γιοτ κυρίως για premium πελάτες σε όλη την Ελλάδα, με επιλεγμένα έργα κουζίνας στη Γερμανία και το Μονακό.",
     keywords:
-      "κουζίνες κατά παραγγελία Ελλάδα, κουζίνες κατά παραγγελία Αθήνα, κουζίνα Γλυφάδα, κουζίνα Πόρτο Ράφτη, ντουλάπες κατά παραγγελία Αθήνα, γκαρνταρόμπες Ελλάδα, έπιπλα κατά παραγγελία Ελλάδα, ξυλουργικές κατασκευές Ελλάδα, έπιπλα βίλας, έπιπλα γιοτ, εσωτερικά γιοτ, έπιπλα γραφείου Αθήνα",
+      "κουζίνες κατά παραγγελία Ελλάδα, premium κουζίνες Ελλάδα, κουζίνες κατά παραγγελία Αθήνα, κουζίνα Γλυφάδα, κουζίνα Πόρτο Ράφτη, κουζίνες κατά παραγγελία Γερμανία, κουζίνες κατά παραγγελία Μονακό, ντουλάπες κατά παραγγελία Ελλάδα, γκαρνταρόμπες Ελλάδα, έπιπλα κατά παραγγελία Ελλάδα, ξυλουργικές κατασκευές Ελλάδα, έπιπλα βίλας, έπιπλα γιοτ, εσωτερικά γιοτ, έπιπλα γραφείου Αθήνα, premium πελάτες Ελλάδα",
     locale: "el_GR",
   },
   seo: {
     schemaDescription:
-      "Η ARCHÉ STUDIO είναι πολυτελές atelier ξυλουργικής στην Ελλάδα για κουζίνες κατά παραγγελία, ντουλάπες, γκαρνταρόμπες, έπιπλα γραφείου, εσωτερικά βίλας και γιοτ.",
+      "Η ARCHÉ STUDIO είναι πολυτελές atelier ξυλουργικής κυρίως για premium πελάτες σε όλη την Ελλάδα, με κουζίνες κατά παραγγελία, ντουλάπες, γκαρνταρόμπες, έπιπλα γραφείου, εσωτερικά βίλας, γιοτ και επιλεγμένα έργα κουζίνας στη Γερμανία και το Μονακό.",
     offerCatalogName: "Πολυτελείς ξυλουργικές υπηρεσίες και έπιπλα κατά παραγγελία στην Ελλάδα",
-    areaServed: ["Ελλάδα", "Αθήνα", "Αθηναϊκή Ριβιέρα", "Γλυφάδα", "Πόρτο Ράφτη", "Μύκονος", "Αττική", "Μεσόγειος"],
+    areaServed: ["Ελλάδα", "Αθήνα", "Αθηναϊκή Ριβιέρα", "Ελληνικά νησιά", "Γλυφάδα", "Πόρτο Ράφτη", "Μύκονος", "Αττική", "Γερμανία", "Μονακό", "Ευρώπη", "Μεσόγειος"],
     knowsAbout: [
       "κουζίνες κατά παραγγελία",
       "ντουλάπες κατά παραγγελία",
@@ -755,7 +755,7 @@ const el = {
     eyebrow: "Ξυλουργικό atelier κατά παραγγελία",
     title: "Κουζίνες, ντουλάπες και πολυτελή έπιπλα στην Ελλάδα",
     copy:
-      "Σχεδιάζουμε, κατασκευάζουμε και εγκαθιστούμε κουζίνες κατά παραγγελία, ντουλάπες, γκαρνταρόμπες, έπιπλα γραφείου και εσωτερικά σε Αθήνα, Γλυφάδα, Πόρτο Ράφτη, Μύκονο και όλη την Ελλάδα. Ειδικευόμαστε επίσης σε ξυλουργικά γιοτ.",
+      "Σχεδιάζουμε, κατασκευάζουμε και εγκαθιστούμε κουζίνες κατά παραγγελία, ντουλάπες, γκαρνταρόμπες, έπιπλα γραφείου και ιδιωτικά interiors κυρίως για premium πελάτες σε όλη την Ελλάδα. Έχουμε επίσης εμπειρία σε κουζίνες στη Γερμανία και το Μονακό, καθώς και σε ξυλουργικά γιοτ.",
     primaryCta: "Ζητήστε συμβουλευτική",
     secondaryCta: "Δείτε τα έργα",
     bottom: ["Κουζίνες κατά παραγγελία", "Ντουλάπες και γκαρνταρόμπες", "Εσωτερικά γιοτ"],
@@ -765,7 +765,7 @@ const el = {
     eyebrow: "Το στούντιο",
     title: "Πολυτελής ξυλουργική στην Ελλάδα για βίλες, σπίτια, γραφεία και γιοτ.",
     text:
-      "Η ARCHÉ STUDIO είναι atelier ξυλουργικής και επίπλου στην Ελλάδα. Δημιουργούμε κουζίνες κατά παραγγελία, ντουλάπες, γκαρνταρόμπες, επενδύσεις τοίχων, έπιπλα γραφείου και ολοκληρωμένους ιδιωτικούς χώρους με αρχιτεκτονική ακρίβεια και premium υλικά.",
+      "Η ARCHÉ STUDIO είναι atelier ξυλουργικής και επίπλου για premium ιδιωτικούς πελάτες σε όλη την Ελλάδα. Δημιουργούμε κουζίνες κατά παραγγελία, ντουλάπες, γκαρνταρόμπες, επενδύσεις τοίχων, έπιπλα γραφείου και ολοκληρωμένους ιδιωτικούς χώρους με αρχιτεκτονική ακρίβεια και premium υλικά, με εμπειρία και σε κουζίνες στη Γερμανία και το Μονακό.",
   },
   stats: [
     { value: "18+", label: "χρόνια ιδιωτικών έργων" },
@@ -776,27 +776,27 @@ const el = {
     eyebrow: "Οι υπηρεσίες μας",
     title: "Κουζίνες, ντουλάπες, γκαρνταρόμπες, έπιπλα γραφείου και εσωτερικά γιοτ.",
     text:
-      "Οι υπηρεσίες μας καλύπτουν πολυτελή ξυλουργική στην Αθήνα και σε όλη την Ελλάδα: κουζίνες κατά παραγγελία, ντουλάπες, γκαρνταρόμπες, επενδύσεις τοίχων, έπιπλα γραφείου, εσωτερικά βίλας και έπιπλα γιοτ.",
+      "Οι υπηρεσίες μας καλύπτουν πολυτελή ξυλουργική κυρίως σε όλη την Ελλάδα: κουζίνες κατά παραγγελία, ντουλάπες, γκαρνταρόμπες, επενδύσεις τοίχων, έπιπλα γραφείου, εσωτερικά βίλας και έπιπλα γιοτ, με επιλεγμένη εμπειρία κουζινών στη Γερμανία και το Μονακό.",
   },
   services: [
     {
       title: "Κουζίνες κατά παραγγελία στην Ελλάδα",
       text:
-        "Κουζίνες κατά παραγγελία για βίλες, διαμερίσματα και κατοικίες σε Αθήνα, Γλυφάδα, Πόρτο Ράφτη και όλη την Ελλάδα, με πέτρα, ξύλο, κρυφή αποθήκευση και premium μηχανισμούς.",
+        "Κουζίνες κατά παραγγελία για βίλες, διαμερίσματα και κατοικίες κυρίως σε όλη την Ελλάδα, με επιλεγμένα έργα κουζίνας στη Γερμανία και το Μονακό, πέτρα, ξύλο, κρυφή αποθήκευση και premium μηχανισμούς.",
       image: images.kitchenWarm,
       icon: icons.Home,
     },
     {
       title: "Ντουλάπες κατά παραγγελία",
       text:
-        "Ντουλάπες κατά παραγγελία και συστήματα αποθήκευσης για βίλες και διαμερίσματα στην Ελλάδα, με premium όψεις, ενσωματωμένο φωτισμό, soft-close μηχανισμούς και ακριβή εγκατάσταση.",
+        "Ντουλάπες κατά παραγγελία και συστήματα αποθήκευσης για βίλες, κατοικίες και premium διαμερίσματα σε όλη την Ελλάδα, με premium όψεις, ενσωματωμένο φωτισμό, soft-close μηχανισμούς και ακριβή εγκατάσταση.",
       image: images.wardrobe,
       icon: icons.DoorOpen,
     },
     {
       title: "Walk-in γκαρνταρόμπες",
       text:
-        "Walk-in γκαρνταρόμπες για ιδιωτικές κατοικίες στην Ελλάδα, σαν boutique χώροι με γυαλί, δέρμα, ορείχαλκο, δρυ και έξυπνη οργάνωση.",
+        "Walk-in γκαρνταρόμπες για βίλες και ιδιωτικές κατοικίες σε όλη την Ελλάδα, σαν boutique χώροι με γυαλί, δέρμα, ορείχαλκο, δρυ και έξυπνη οργάνωση.",
       image: images.closet,
       icon: icons.Diamond,
     },
@@ -810,7 +810,7 @@ const el = {
     {
       title: "Έπιπλα γραφείου και εσωτερικού",
       text:
-        "Έπιπλα κατά παραγγελία για σαλόνια, υπνοδωμάτια, γραφεία και πλήρεις ιδιωτικές κατοικίες στην Αθήνα, τη Ριβιέρα και όλη την Ελλάδα.",
+        "Έπιπλα κατά παραγγελία για σαλόνια, υπνοδωμάτια, γραφεία και πλήρεις ιδιωτικές κατοικίες, κυρίως για premium πελάτες σε όλη την Ελλάδα.",
       image: images.living,
       icon: icons.Gem,
     },
@@ -825,7 +825,7 @@ const el = {
   projectsIntro: {
     eyebrow: "Τα έργα μας",
     title: ["Έπιπλα κατά παραγγελία στην Ελλάδα", "και εσωτερικά γιοτ."],
-    text: "Στο portfolio μας θα βρείτε κουζίνες στη Γλυφάδα και στο Πόρτο Ράφτη, ντουλάπες για βίλες στην Ελλάδα, έπιπλα γραφείου στο κέντρο της Αθήνας και εξειδικευμένα εσωτερικά γιοτ.",
+    text: "Το βασικό portfolio μας είναι στην Ελλάδα: premium κουζίνες, ντουλάπες, έπιπλα γραφείου, εσωτερικά βίλας και έργα γιοτ. Έχουμε επίσης εμπειρία σε κουζίνες κατά παραγγελία στη Γερμανία και το Μονακό.",
     categoryOrder: ["Κουζίνες", "Ντουλάπες", "Γιοτ", "Γραφεία"],
     all: "Όλα",
     previous: "Προηγούμενα έργα",
@@ -967,7 +967,7 @@ const el = {
   ],
   benefitsIntro: {
     eyebrow: "Γιατί μας επιλέγουν",
-    title: "Για βίλες, κατοικίες, γραφεία στην Ελλάδα και γιοτ που απαιτούν ακρίβεια.",
+    title: "Για premium βίλες, κατοικίες, γραφεία στην Ελλάδα και γιοτ που απαιτούν ακρίβεια.",
   },
   benefits: [
     "Premium υλικά",
@@ -976,7 +976,7 @@ const el = {
     "Πολυτελή φινιρίσματα",
     "Πλήρης διαχείριση έργου",
     "Συνεργασία με αρχιτέκτονες και designers",
-    "Εγκατάσταση σε Αθήνα, Γλυφάδα, Πόρτο Ράφτη, Μύκονο και όλη την Ελλάδα",
+    "Εγκατάσταση κυρίως σε όλη την Ελλάδα, με επιλεγμένα έργα στη Γερμανία και το Μονακό",
     "Ποιότητα με διάρκεια",
   ],
   contact: {
@@ -985,7 +985,7 @@ const el = {
     text:
       "Πείτε μας για την κουζίνα, τις ντουλάπες, τη γκαρνταρόμπα, τα έπιπλα γραφείου, το εσωτερικό βίλας ή το έργο γιοτ. Η ARCHÉ STUDIO θα προετοιμάσει το επόμενο βήμα για ιδιωτική συμβουλευτική.",
     directMessage: "Στείλτε μας μήνυμα",
-    location: "Αθήνα / Γλυφάδα / Πόρτο Ράφτη / Μύκονος / Ελλάδα",
+    location: "Ελλάδα / Αθήνα / Ελληνικά νησιά / Γερμανία / Μονακό",
   },
   form: {
     name: "Όνομα",
